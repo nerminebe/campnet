@@ -1,0 +1,12 @@
+{% extends 'base-front.html.twig' %}
+
+{% block title %}New Produit{% endblock %}
+
+{% block body %}
+
+
+    {{ include('produit/_form.html.twig') }}
+
+    <a href="{{ path('produit_index') }}">Consulter la liste de produits</a>
+{% endblock %}
+
