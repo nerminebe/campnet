@@ -1,0 +1,12 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Campnet{% endblock %}
+
+
+{% block body %}
+    <h1>Create new Campnet</h1>
+
+    {{ include('campnet/_form.html.twig') }}
+
+    <a href="{{ path('campnet_index') }}">back to list</a>
+{% endblock %}

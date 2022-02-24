@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservation{% endblock %}
+
+{% block body %}
+    <h1> Reservation </h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th> id </th>
+            <th>Nombre de personnes</th>
+            <th>Date d'arrivée</th>
+            <th>Date de retour</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for reservation in reservations %}
+            <tr>
+                <td>{{ reservation.id }}</td>
+                <td>{{ reservation.nbrPers }}</td>
+                <td>{{ reservation.date ? reservation.date.format('year(s), month(s), day(s)')  }}</td>
+                <td>{{ reservation.dateR ? reservation.dateR.format('year(s), month(s), day(s)')  }}</td>
+                <td>
+                    <a href="{{ path('reservation_show', {'id': reservation.id}) }}">show</a>
+                    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('reservation_new') }}">Create new</a>
+{% endblock %}

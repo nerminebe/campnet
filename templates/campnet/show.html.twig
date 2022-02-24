@@ -1,0 +1,23 @@
+{% extends 'campnet.html.twig' %}
+
+
+<title>Campnet</title>
+
+{% block body %}
+    <h1>Campnet</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ campnet.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('campnet_index') }}">back to list</a>
+
+    <a href="{{ path('campnet_edit', {'id': campnet.id}) }}">edit</a>
+
+    {{ include('campnet/_delete_form.html.twig') }}
+{% endblock %}
